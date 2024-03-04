@@ -10,7 +10,8 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {  
+            steps {                  
+                sh 'rm -r node_modules'
                 sh 'npm cache clean --force'             
                 sh 'npm install'
             }
