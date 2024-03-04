@@ -13,7 +13,7 @@ pipeline {
             steps {                  
                 sh 'rm -r node_modules'
                 sh 'npm cache clean --force'             
-                sh 'npm install'
+                sh 'sudo npm install'
             }
         }
         stage('Test') {
