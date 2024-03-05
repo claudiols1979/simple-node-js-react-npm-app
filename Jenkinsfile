@@ -16,7 +16,7 @@ pipeline {
                     // Remove node_modules directory
                 sh 'if [ -d node_modules ]; then rm -r node_modules; fi'       
                 sh 'npm cache clean --force'                  
-                sh 'sudo npm install'
+                sh 'npm install'
             }
         }
         stage('Test') {
