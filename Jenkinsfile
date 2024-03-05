@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'claudiols1979/nodejs:1.1.0'
+            image 'claudiols1979/nodejs:1.1.1'
             args '-p 3000:3000'
         }
     }
@@ -13,8 +13,7 @@ pipeline {
             steps {
                 script {
                     // Switch to root user and create the directory
-                    sh '''
-                        sudo su -
+                    sh '''                        
                         mkdir -p /.npm
                         chown -R 117:122 "/.npm"
                     '''
