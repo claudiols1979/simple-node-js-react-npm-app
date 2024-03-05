@@ -10,7 +10,9 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {                          
+            steps {   
+                sh 'sudo mkdir /.npm'                       
+                sh 'sudo chown -R 117:122 "/.npm"'
                 sh 'npm install'
             }
         }
