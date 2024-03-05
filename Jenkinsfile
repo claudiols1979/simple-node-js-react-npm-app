@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'claudiols1979/nodeapp_test:56'
+            image 'node:hydrogen-slim'
             args '-p 3000:3000'
         }
     }
