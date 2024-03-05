@@ -16,7 +16,7 @@ pipeline {
                     // Remove node_modules directory
                 sh 'if [ -d node_modules ]; then rm -r node_modules; fi'       
                 sh 'npm cache clean --force'  
-                sh 'mkdir .npm'  
+                sh 'mkdir /.npm'  
                 sh 'chown -R 117:122 "/.npm"'              
                 sh 'npm install'
             }
