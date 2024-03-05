@@ -16,6 +16,7 @@ pipeline {
                     sh '''                        
                         mkdir -p /.npm
                         chown -R 117:122 "/.npm"
+                        npm install @babe/core
                     '''
 
                     // Run npm install
