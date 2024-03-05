@@ -9,11 +9,19 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') {
-            steps {   
-                sh 'sudo mkdir /.npm'                       
-                sh 'sudo chown -R 117:122 "/.npm"'
-                sh 'npm install'
+       stage('Build') {
+            steps {
+                script {
+                    // Switch to root user and create the directory
+                    sh '''
+                        sudo su -
+                        mkdir -p /.npm
+                        chown -R 117:122 "/.npm"
+                    '''
+
+                    // Run npm install
+                    sh 'npm install'
+                }
             }
         }
         stage('Test') {
