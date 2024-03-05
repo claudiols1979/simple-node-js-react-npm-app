@@ -10,14 +10,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {                               
-               // Check if node_modules directory exists
-                
-                    // Remove node_modules directory
-                sh 'if [ -d node_modules ]; then rm -r node_modules; fi'       
-                sh 'npm cache clean --force'  
-                sh 'mkdir /.npm'  
-                sh 'chown -R 117:122 "/.npm"'              
+            steps {                          
                 sh 'npm install'
             }
         }
