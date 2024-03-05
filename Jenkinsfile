@@ -11,7 +11,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {                  
-                sh 'rm -r node_modules'
+               // Check if node_modules directory exists
+                if (fileExists('node_modules')) {
+                    // Remove node_modules directory
+                    sh 'rm -r node_modules'
+                }
                 sh 'npm cache clean --force'             
                 sh 'sudo npm install'
             }
