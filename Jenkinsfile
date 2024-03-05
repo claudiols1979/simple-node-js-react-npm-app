@@ -10,9 +10,9 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {                  
+            steps {                               
                // Check if node_modules directory exists
-                if (fileExists('node_modules')) {
+                if (sh(script: 'test -d node_modules', returnStatus: true) == 0) {
                     // Remove node_modules directory
                     sh 'rm -r node_modules'
                 }
