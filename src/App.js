@@ -11,7 +11,7 @@ class App extends Component {
           <h1 className="App-title">My Test App</h1>
         </header>
         <p className="App-intro">
-          Where all the magic happends <code>src/App.js</code>.
+          Where all the magic happens <code>src/App.js</code>.
         </p>
       </div>
     );
